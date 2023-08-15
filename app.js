@@ -20,7 +20,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-  if (typeof playerChoice === 'undefined' || playerChoice === null) {
+  if (typeof playerChoice === 'undefined') {
     return 'Please, pick one option between rock, paper or scissor';
   }
 
@@ -35,6 +35,10 @@ function playRound(playerChoice, computerChoice) {
 
 function getUsersChoice() {
   const userInput = prompt('Rock, Paper or Scissor?');
+  if (userInput === null) {
+    return undefined;
+  }
+
   return options.find(
     (e) => e.asString.toLowerCase() === userInput.toLowerCase()
   );
