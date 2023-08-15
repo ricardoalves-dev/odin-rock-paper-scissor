@@ -20,7 +20,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-  if (typeof playerChoice === 'undefined') {
+  if (typeof playerChoice === 'undefined' || playerChoice === null) {
     return 'Please, pick one option between rock, paper or scissor';
   }
 
