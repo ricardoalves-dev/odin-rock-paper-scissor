@@ -20,7 +20,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-  if (typeof playerChoice === undefined) {
+  if (typeof playerChoice === 'undefined') {
     return 'Please, pick one option between rock, paper or scissor';
   }
 
@@ -40,6 +40,11 @@ function getUsersChoice() {
   );
 }
 
-//console.log(getUsersChoice());
-//const playerChoice = rock;
-//console.log(playRound(playerChoice, getComputerChoice()));
+function game() {
+  const numberOfRounds = 5;
+  for (let round = 0; round < numberOfRounds; round++) {
+    console.log(playRound(getUsersChoice(), getComputerChoice()));
+  }
+}
+
+game();
