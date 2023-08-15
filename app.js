@@ -20,6 +20,10 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
+  if (typeof playerChoice === undefined) {
+    return 'Please, pick one option between rock, paper or scissor';
+  }
+
   if (playerChoice.asString === computerChoice.asString) {
     return "It's a draw!";
   }
