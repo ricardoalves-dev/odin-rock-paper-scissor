@@ -29,5 +29,13 @@ function playRound(playerChoice, computerChoice) {
     : `You lose! ${computerChoice.asString} beats ${playerChoice.asString}`;
 }
 
+function getUsersChoice() {
+  const userInput = prompt('Rock, Paper or Scissor?');
+  return options.find(
+    (e) => e.asString.toLowerCase() === userInput.toLowerCase()
+  );
+}
+
+//console.log(getUsersChoice());
 //const playerChoice = rock;
 //console.log(playRound(playerChoice, getComputerChoice()));
