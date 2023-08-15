@@ -44,11 +44,6 @@ function getUsersChoice() {
   );
 }
 
-function game() {
-  const numberOfRounds = 5;
-  for (let round = 0; round < numberOfRounds; round++) {
-    console.log(playRound(getUsersChoice(), getComputerChoice()));
-  }
-}
+function game() {}
 
 game();
