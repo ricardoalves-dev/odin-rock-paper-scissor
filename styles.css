@@ -1,129 +1,175 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    height: 100vh;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: Roboto, sans-serif;
 }
 
-html{
-    font-size: 62.5%;
-    height: 100%;
+html {
+  font-size: 62.5%;
+  height: 100%;
 }
 
-.container{
-    width: 40%;
-    height: 80%;
-    background-color: yellow;
-    border-radius: 1rem;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
+.container {
+  width: 50rem;
+  height: 80%;
+  background-color: rgb(18, 18, 20);
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
-header{
-    padding: 2rem;
-    
+header {
+  padding: 2rem;
+  border-bottom: 0.5rem solid #fff;
 }
 
-footer{    
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: .1rem solid black;
+footer {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.5rem solid #fff;
 }
 
-h1{
-    text-align: center;
-    font-size: 5rem;
+h1 {
+  text-align: center;
+  font-size: 6rem;
 }
 
-h2{
-    text-align: center;
-    font-size: 2rem;
-    padding: 1rem 0;
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem 0;
 }
 
-main{
-    flex: 2;
-    display: flex; 
-    padding: 2rem;  
+main {
+  flex: 2;
+  display: flex;
+  padding: 2rem;
 }
 
-.goku-info{
-    flex: 2;
-    display: flex;
-    flex-flow: column;
+.choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.goku{
-    flex: 10;
-    background-image: url(./assets/goku.jpg);
-    background-position: center;
-    background-size: cover;
-    border-radius: 1rem;
+.choice p {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
 
-.choice{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.health-bar {
+  flex: 1;
+  border: 0.1rem solid black;
+  margin: 0.5rem 0;
 }
 
-.choice p{
-    font-size: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
+.health-100 {
+  background-color: rgb(0, 255, 13);
 }
 
-.health-bar{
-    flex: 1;
-    border: .1rem solid black;
-    margin: 0.5rem 0;
-    background: linear-gradient(to right, rgb(0, 255, 13) 0%, rgb(0, 255, 13) 50%, rgb(0, 255, 13) 51%, rgb(0, 255, 13) 100%);
+.health-80 {
+  background: linear-gradient(
+    to right,
+    rgb(0, 255, 13) 0%,
+    rgb(0, 255, 13) 79%,
+    rgb(255, 30, 0) 80%,
+    rgb(255, 30, 0) 100%
+  );
 }
 
-.vs{
-    flex: 1;
-    background-image: url(./assets/competition.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 1rem;
+.health-60 {
+  background: linear-gradient(
+    to right,
+    rgb(0, 255, 13) 0%,
+    rgb(0, 255, 13) 59%,
+    rgb(255, 30, 0) 60%,
+    rgb(255, 30, 0) 100%
+  );
 }
 
-.vegeta-info{
-    flex: 2;
-    display: flex;
-    flex-flow: column;
+.health-40 {
+  background: linear-gradient(
+    to right,
+    rgb(0, 255, 13) 0%,
+    rgb(0, 255, 13) 39%,
+    rgb(255, 30, 0) 40%,
+    rgb(255, 30, 0) 100%
+  );
 }
 
-.vegeta{
-    flex: 10;
-    background-image: url(./assets/vegeta.jpg);
-    background-position: center;
-    background-size: cover;
-    border-radius: 1rem;
+.health-20 {
+  background: linear-gradient(
+    to right,
+    rgb(0, 255, 13) 0%,
+    rgb(0, 255, 13) 19%,
+    rgb(255, 30, 0) 20%,
+    rgb(255, 30, 0) 100%
+  );
 }
 
-.buttons{
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
+.health-0 {
+  background-color: rgb(255, 30, 0);
 }
 
-button{
-    width: 10rem;
-    font-size: 5rem;
-    cursor: pointer;
+.vs {
+  flex: 1;
+  background-image: url(./assets/competition.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 1rem;
+}
+
+.info {
+  flex: 2;
+  display: flex;
+  flex-flow: column;
+}
+
+.char {
+  flex: 10;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.goku {
+  background-image: url(./assets/goku.jpg);
+}
+
+.vegeta {
+  background-image: url(./assets/vegeta.jpg);
+}
+
+.buttons {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 4rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  flex: 1;
 }
