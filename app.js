@@ -21,7 +21,7 @@ let computerHealth;
 
 const options = [rock, paper, scissor];
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.choiceButton');
 
 function getComputerChoice() {
   return options[Math.floor(Math.random() * 3)];
@@ -44,11 +44,14 @@ function playRound(event) {
   changeHealth('goku', playerHealth);
   changeHealth('vegeta', computerHealth);
 
-  computerHealth <= 0 || (playerHealth <= 0 && endGame());
+  (computerHealth <= 0 || playerHealth <= 0) && endGame();
 }
 
 function endGame() {
   buttons.forEach((b) => b.removeEventListener('click', playRound));
+  document.querySelector('.buttons').classList = 'buttons hidden';
+  document.querySelector('.play').innerText = 'PLAY AGAIN';
+  document.querySelector('.play').classList = 'play';
 }
 
 function getUsersChoice(event) {
@@ -77,17 +80,20 @@ function changeHealth(char, percent) {
   healthBar.classList = `health-bar health-${percent}`;
 }
 
-function startGame() {
-  clearChoices();
+function initializeHealth() {
   playerHealth = 100;
   computerHealth = 100;
   changeHealth('goku', playerHealth);
   changeHealth('vegeta', computerHealth);
+}
+
+function startGame() {
+  clearChoices();
+  initializeHealth();
   buttons.forEach((b) => b.addEventListener('click', playRound));
+  document.querySelector('.buttons').classList = 'buttons';
+  document.querySelector('.play').innerText = 'PLAY';
+  document.querySelector('.play').classList = 'play hidden';
 }
 
-function game() {
-  startGame();
-}
-
-game();
+document.querySelector('.play').addEventListener('click', startGame);
