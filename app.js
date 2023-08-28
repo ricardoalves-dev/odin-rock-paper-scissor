@@ -28,6 +28,7 @@ function getComputerChoice() {
 }
 
 function playRound(event) {
+  const healthLoss = 20;
   const playerChoice = getUsersChoice(event);
   const computerChoice = getComputerChoice();
 
@@ -38,8 +39,8 @@ function playRound(event) {
   }
 
   playerChoice.beats(computerChoice)
-    ? (computerHealth = computerHealth - 20)
-    : (playerHealth = playerHealth - 20);
+    ? (computerHealth -= healthLoss)
+    : (playerHealth -= healthLoss);
 
   changeHealth('goku', playerHealth);
   changeHealth('vegeta', computerHealth);
